@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirSync Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+</head>
+
+<body>
+    <form class="form" method="POST" action="{{ url_for('login') }}">
+        <div class="header-container">
+            <img src="{{ url_for('static', filename='logo.png') }}" alt="AirSync Logo" class="logo">
+        </div>
+        <p class="form-title">Verify yourself</p>
+        <div class="input-container">
+            <input placeholder="Enter password" type="password" name="password" required>
+        </div>
+
+        <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Keep me logged in</label>
+        </div>
+
+        <button class="submit" type="submit">
+            Sign in
+        </button>
+        {% if error %}
+        <p class="error">{{ error }}</p>
+        {% endif %}
+    </form>
+</body>
+</html>
