@@ -4,16 +4,16 @@
 #include <DHT.h>
 
 // Wi-Fi Credentials
-const char* ssid = "monitor";
-const char* password = "photon123";
+const char* ssid = "TP-Link_470A";
+const char* password = "37475390";
 
 // DHT Sensor
-#define DHTPIN 4
+#define DHTPIN 25
 #define DHTTYPE DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
 // Server Details
-const char* server = "http://192.168.151.65:5003";
+const char* server = "http://192.168.0.148:5003";
 unsigned long lastUpdateCheck = 0;
 const long updateInterval = 30000; // Check every 30 seconds
 
